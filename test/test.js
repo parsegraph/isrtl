@@ -1,8 +1,10 @@
 var assert = require("assert");
-import todo from "../dist/isrtl";
+import isRTL  from "../dist/isrtl";
 
-describe("Package", function () {
+describe("isRTL", function () {
   it("works", ()=>{
-    assert.equal(todo(), 42);
+    assert.equal(isRTL("a"), false);
+    assert.equal(isRTL(" "), false);
+    assert.equal(isRTL('ערב טוב'), true);
   });
 });
