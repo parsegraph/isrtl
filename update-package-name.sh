@@ -13,4 +13,4 @@ fi
 echo package name is $PACKAGE_NAME
 
 sed -i "s/microproject/$PACKAGE_NAME/g" .git/config
-git ls-files | xargs sed -i "s/TODO-PACKAGE-NAME/$PACKAGE_NAME/g" && echo Now run git rm -f $0 to remove this file.
+git ls-files | xargs sed -i "s/isrtl/$PACKAGE_NAME/g" && echo Now run git rm -f $0 to remove this file.
