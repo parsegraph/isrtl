@@ -4,6 +4,6 @@ const ltrChars =
 const rtlChars = '\u0591-\u07FF\uFB1D-\uFDFD\uFE70-\uFEFC';
 const rtlDirCheck = new RegExp('^[^' + ltrChars + ']*[' + rtlChars + ']');
 
-export default function isRTL(s) {
+export default function isRTL(s:string):boolean {
   return rtlDirCheck.test(s);
 }
