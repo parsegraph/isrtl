@@ -27,5 +27,5 @@ jobs:
         make tar
     - uses: actions/upload-artifact@v2
       with:
-        name: parsegraph-isrtl-${{ github.run_number }}
+        name: parsegraph-isrtl-prod-${{ github.run_number }}
         path: parsegraph-isrtl.tgz
