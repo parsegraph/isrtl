@@ -4,14 +4,22 @@
 
 2. Push to github on main.
 
-3. Await successful github build. Fix if errors.
+3. Await successful github development build. Fix if errors.
 
-For development and production:
+4. Download development ZIP artifact and move it to project directory.
 
-1. Download artifact ZIP file to project directory.
+5. Unzip development ZIP artifact, revealing .tgz archive.
 
-2. Unzip ZIP file to get tarball file in project directory.
+6. npm publish [development-tarball] --tag dev
 
-3. npm publish [production-tarball] --tag latest
+7. Test dev NPM package. Return to step 1 if dev tarball fails test.
 
-4. npm publish [development-tarball] --tag dev
+8. Await successful github production build. Fix if errors.
+
+9. Download production ZIP artifact and move it to project directory.
+
+10. Unzip production ZIP artifact, revealing .tgz archive.
+
+11. npm publish [production-tarball]
+
+12. Test prod NPM package. Return to step 1 if dev tarball fails test.
