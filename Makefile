@@ -43,7 +43,10 @@ esdoc:
 doc: esdoc
 .PHONY: doc
 
-tar: parsegraph-$(DIST_NAME)-prod.tgz parsegraph-$(DIST_NAME)-dev.tgz
+tar: parsegraph-$(DIST_NAME)-dev.tgz
+.PHONY: tar
+
+tar-prod: parsegraph-$(DIST_NAME)-prod.tgz
 .PHONY: tar
 
 parsegraph-$(DIST_NAME)-prod.tgz: dist/$(DIST_NAME)-prod.js
