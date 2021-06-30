@@ -60,9 +60,8 @@ parsegraph-$(DIST_NAME)-prod.tgz: dist/$(DIST_NAME)-prod.js
 parsegraph-$(DIST_NAME)-dev.tgz: dist/$(DIST_NAME).js
 	rm -rf parsegraph-$(DIST_NAME)
 	mkdir parsegraph-$(DIST_NAME)
-	cp -r dist/ README.md LICENSE parsegraph-$(DIST_NAME)
-	cp -r package-prod.json parsegraph-$(DIST_NAME)/package.json
-	tar cvzf $@ parsegraph-$(DIST_NAME)/
+	cp -r -t parsegraph-isrtl package.json package-lock.json README.md demo/ LICENSE dist/
+	tar cvzf $@ parsegraph-isrtl/
 	rm -rf parsegraph-$(DIST_NAME)
 
 dist/$(DIST_NAME).js: package.json package-lock.json $(SCRIPT_FILES)
@@ -75,4 +74,5 @@ dist/$(DIST_NAME)-prod.js: package.json package-lock.json $(SCRIPT_FILES)
 
 clean:
 	rm -rf dist .nyc_output parsegraph-$(DIST_NAME)-dev.tgz parsegraph-$(DIST_NAME)-prod.tgz
+	rm -rf parsegraph-$(DIST_NAME)
 .PHONY: clean

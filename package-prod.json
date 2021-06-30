@@ -1,6 +1,6 @@
 {
   "name": "parsegraph-isrtl",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "isrtl",
   "main": "dist/isrtl.js",
   "types": "dist/isrtl.d.ts",
