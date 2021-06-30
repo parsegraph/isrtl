@@ -22,9 +22,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: NODE_ENV=production npm ci --omit=dev
     - run: NODE_ENV=production make clean build-prod
-    - run: |
-        mkdir parsegraph-isrtl
-        make tar
+    - run: NODE_ENV=production make tar
     - uses: actions/upload-artifact@v2
       with:
         name: parsegraph-isrtl-prod-${{ github.run_number }}

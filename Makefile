@@ -47,7 +47,11 @@ tar: parsegraph-$(DIST_NAME).tgz
 .PHONY: tar
 
 parsegraph-$(DIST_NAME).tgz: dist/$(DIST_NAME).js
-	tar cvzf $@ dist/ package.json package-lock.json README.md LICENSE
+	rm -rf parsegraph-$(DIST_NAME)
+	mkdir parsegraph-$(DIST_NAME)
+	cp -r dist/ package.json package-lock.json README.md LICENSE parsegraph-$(DIST_NAME)
+	tar cvzf $@ parsegraph-$(DIST_NAME)/
+	rm -rf parsegraph-$(DIST_NAME)
 
 dist/$(DIST_NAME).js: package.json package-lock.json $(SCRIPT_FILES)
 	npm run build
