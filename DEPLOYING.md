@@ -1,10 +1,15 @@
 ## Deployment
 
-1. Await successful github build.
+1. Push to github on main.
 
-2. Download artifact ZIP file to project directory..
+2. Await successful github build. Fix if errors.
 
-3. Unzip tarball file in project directory.
+For development and production:
 
-4. npm publish <tarball>
+1. Download artifact ZIP file to project directory.
 
+2. Unzip ZIP file to get tarball file in project directory.
+
+3. npm publish [production-tarball] --tag latest
+
+4. npm publish [development-tarball] --tag dev
