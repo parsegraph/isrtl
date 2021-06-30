@@ -1,6 +1,5 @@
 {
   "name": "parsegraph-isrtl",
-  "version": "1.4.5",
   "description": "isrtl",
   "main": "dist/isrtl.js",
   "types": "dist/isrtl.d.ts",
@@ -12,16 +11,6 @@
     "build": "webpack --config webpack.config.js",
     "build-prod": "NODE_ENV=production webpack --config webpack.prod.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/parsegraph/isrtl.git"
-  },
-  "author": "Rainback, Inc.",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/parsegraph/isrtl/issues"
-  },
-  "homepage": "https://github.com/parsegraph/isrtl#readme",
   "nyc": {
     "extends": "@istanbuljs/nyc-config-babel",
     "reporter": [
