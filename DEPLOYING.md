@@ -12,7 +12,7 @@
 
 6. npm publish [development-tarball] --tag dev
 
-7. Test dev NPM package. Return to step 1 if dev tarball fails test.
+7. Test dev NPM package. Return to step 1 if development package fails testing.
 
 8. Await successful github production build. Fix if errors.
 
@@ -22,4 +22,4 @@
 
 11. npm publish [production-tarball]
 
-12. Test prod NPM package. Return to step 1 if dev tarball fails test.
+12. Test prod NPM package. Return to step 1 if production package fails testing.
