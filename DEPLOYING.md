@@ -1,6 +1,6 @@
 ## Deployment
 
-1. Ensure package number is incremented in both package.json and package-prod.json.
+1. Ensure package's build number is incremented in both package.json and package-prod.json.
 
 2. Push to github on main.
 
