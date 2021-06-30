@@ -4,7 +4,7 @@ module.exports = {
   entry: path.resolve(__dirname, "src/isrtl.ts"),
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "isrtl.js",
+    filename: "isrtl-prod.js",
     globalObject: "this",
     library: "isrtl",
     libraryTarget: "umd",

@@ -1,8 +1,10 @@
 ## Deployment
 
-1. Push to github on main.
+1. Ensure package number is incremented in both package.json and package-prod.json.
 
-2. Await successful github build. Fix if errors.
+2. Push to github on main.
+
+3. Await successful github build. Fix if errors.
 
 For development and production:
 
