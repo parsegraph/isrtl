@@ -8,6 +8,11 @@ all: build lint test coverage esdoc
 build: dist/$(DIST_NAME).js
 .PHONY: build
 
+build-prod:
+	npm run build-prod
+	mv -v dist/src/* dist/
+.PHONY: build-prod
+
 demo: dist/$(DIST_NAME).js
 	npm run demo
 .PHONY: demo
