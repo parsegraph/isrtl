@@ -53,6 +53,7 @@ parsegraph-$(DIST_NAME)-prod.tgz: dist/$(DIST_NAME)-prod.js
 	rm -rf parsegraph-$(DIST_NAME)
 	mkdir parsegraph-$(DIST_NAME)
 	cp -r dist/ README.md LICENSE parsegraph-$(DIST_NAME)
+	mv parsegraph-$(DIST_NAME)/dist/$(DIST_NAME)-prod.js parsegraph-$(DIST_NAME)/dist/$(DIST_NAME).js
 	cp -r package-prod.json parsegraph-$(DIST_NAME)/package.json
 	tar cvzf $@ parsegraph-$(DIST_NAME)/
 	rm -rf parsegraph-$(DIST_NAME)
