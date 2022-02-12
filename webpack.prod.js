@@ -15,12 +15,7 @@ module.exports = {
         test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         use: ["babel-loader", "ts-loader"]
-      },
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
+      }
     ],
   },
   resolve: {
