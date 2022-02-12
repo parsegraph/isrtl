@@ -6,7 +6,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "isrtl-prod.js",
     globalObject: "this",
-    library: "isrtl",
+    library: "parsegraph_isrtl",
     libraryTarget: "umd",
   },
   module: {

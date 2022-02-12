@@ -6,7 +6,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "isrtl.js",
     globalObject: "this",
-    library: "isrtl",
+    library: "parsegraph_isrtl",
     libraryTarget: "umd",
   },
   module: {
@@ -14,7 +14,7 @@ module.exports = {
       {
         test: /\.(js|ts|tsx?)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader!ts-loader'
+        use: ["babel-loader", "ts-loader"]
       },
       {
         test: /\.(glsl|vs|fs|vert|frag)$/,

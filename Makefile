@@ -49,29 +49,33 @@ tar: parsegraph-$(DIST_NAME)-dev.tgz
 tar-prod: parsegraph-$(DIST_NAME)-prod.tgz
 .PHONY: tar
 
-parsegraph-$(DIST_NAME)-prod.tgz: dist/$(DIST_NAME)-prod.js
+parsegraph-$(DIST_NAME)-prod.tgz: dist-prod/parsegraph-$(DIST_NAME).js
 	rm -rf parsegraph-$(DIST_NAME)
 	mkdir parsegraph-$(DIST_NAME)
-	cp -r dist/ README.md LICENSE parsegraph-$(DIST_NAME)
-	mv parsegraph-$(DIST_NAME)/dist/$(DIST_NAME)-prod.js parsegraph-$(DIST_NAME)/dist/$(DIST_NAME).js
+	cp -r README.md LICENSE parsegraph-$(DIST_NAME)
+	cp -r dist-prod/ parsegraph-$(DIST_NAME)/dist
 	cp -r package-prod.json parsegraph-$(DIST_NAME)/package.json
 	tar cvzf $@ parsegraph-$(DIST_NAME)/
 	rm -rf parsegraph-$(DIST_NAME)
 
-parsegraph-$(DIST_NAME)-dev.tgz: dist/$(DIST_NAME).js
+parsegraph-$(DIST_NAME)-dev.tgz: dist/parsegraph-$(DIST_NAME).js
 	rm -rf parsegraph-$(DIST_NAME)
 	mkdir parsegraph-$(DIST_NAME)
-	cp -r -t parsegraph-isrtl package.json package-lock.json README.md demo/ LICENSE dist/
-	tar cvzf $@ parsegraph-isrtl/
+	cp -r -t parsegraph-$(DIST_NAME) package.json package-lock.json README.md demo/ LICENSE dist/
+	tar cvzf $@ parsegraph-$(DIST_NAME)/
 	rm -rf parsegraph-$(DIST_NAME)
 
-dist/$(DIST_NAME).js: package.json package-lock.json $(SCRIPT_FILES)
+dist/parsegraph-$(DIST_NAME).js: package.json package-lock.json $(SCRIPT_FILES) $(GLSL_SCRIPTS)
 	npm run build
-	mv -v dist/src/* dist/
+	mv -v dist-types/src/* dist/
+	mv dist/index.d.ts dist/parsegraph-$(DIST_NAME).d.ts
+	mv dist/index.d.ts.map dist/parsegraph-$(DIST_NAME).d.ts.map
 
-dist/$(DIST_NAME)-prod.js: package.json package-lock.json $(SCRIPT_FILES)
+dist-prod/parsegraph-$(DIST_NAME).js: package.json package-lock.json $(SCRIPT_FILES)
 	npm run build-prod
-	mv -v dist/src/* dist/
+	mv -v dist-types/src/* dist-prod/
+	mv dist-prod/index.d.ts dist-prod/parsegraph-$(DIST_NAME).d.ts
+	mv dist-prod/index.d.ts.map dist-prod/parsegraph-$(DIST_NAME).d.ts.map
 
 clean:
 	rm -rf dist .nyc_output parsegraph-$(DIST_NAME)-dev.tgz parsegraph-$(DIST_NAME)-prod.tgz
