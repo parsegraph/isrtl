@@ -5,7 +5,7 @@ SCRIPT_FILES = \
 
 all: build lint test coverage esdoc
 
-build: dist/$(DIST_NAME).js
+build: dist/parsegraph-$(DIST_NAME).js
 .PHONY: build
 
 build-prod:
@@ -13,7 +13,7 @@ build-prod:
 	mv -v dist/src/* dist/
 .PHONY: build-prod
 
-demo: dist/$(DIST_NAME).js
+demo: dist/parsegraph-$(DIST_NAME).js
 	npm run demo
 .PHONY: demo
 
