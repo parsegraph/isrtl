@@ -2,8 +2,8 @@
   "name": "parsegraph-isrtl",
   "version": "1.4.10",
   "description": "isrtl",
-  "main": "dist/isrtl.js",
-  "types": "dist/isrtl.d.ts",
+  "main": "dist/parsegraph-isrtl.js",
+  "types": "dist/parsegraph-isrtl.d.ts",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/parsegraph/isrtl.git"
