@@ -1,10 +1,10 @@
 const path = require("path");
 
 module.exports = {
-  entry: path.resolve(__dirname, "src/isrtl.ts"),
+  entry: path.resolve(__dirname, "src/index.ts"),
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "isrtl.js",
+    filename: "parsegraph-isrtl.js",
     globalObject: "this",
     library: "parsegraph_isrtl",
     libraryTarget: "umd",
