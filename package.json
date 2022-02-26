@@ -2,8 +2,8 @@
   "name": "parsegraph-isrtl",
   "version": "1.4.10",
   "description": "isrtl",
-  "main": "dist/parsegraph-isrtl.js",
-  "types": "dist/parsegraph-isrtl.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
     "coverage": "nyc npm run test",
     "test": "cross-env TS_NODE_PROJECT=\"tsconfig.testing.json\" mocha",
