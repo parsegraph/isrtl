@@ -1,5 +1,5 @@
-var assert = require("assert");
-import isRTL from "../dist/isrtl";
+const assert = require("assert");
+import isRTL from "../src/index";
 
 describe("isRTL", function () {
   it("works", () => {
